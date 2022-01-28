@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "C:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Android.mk",
+    "C:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Application.mk"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -CC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "sampleframework-debug-arm64-v8a": {
+      "artifactName": "sampleframework",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libsampleframework.a",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\SampleFramework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libsampleframework.a",
+      "runtimeFiles": []
+    }
+  }
+}

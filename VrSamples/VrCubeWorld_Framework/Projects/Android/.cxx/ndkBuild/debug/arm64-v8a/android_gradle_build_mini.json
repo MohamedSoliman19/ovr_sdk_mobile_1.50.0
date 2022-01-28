@@ -1,0 +1,54 @@
+{
+  "buildFiles": [
+    "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk",
+    "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "minizip-debug-arm64-v8a": {
+      "artifactName": "minizip",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libminizip.a",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libminizip.a",
+      "runtimeFiles": []
+    },
+    "vrcubeworldfw-debug-arm64-v8a": {
+      "artifactName": "vrcubeworldfw",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libvrcubeworldfw.so",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libvrcubeworldfw.so",
+      "runtimeFiles": []
+    },
+    "sampleframework-debug-arm64-v8a": {
+      "artifactName": "sampleframework",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libsampleframework.a",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libsampleframework.a",
+      "runtimeFiles": []
+    },
+    "stb-debug-arm64-v8a": {
+      "artifactName": "stb",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libstb.a",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libstb.a",
+      "runtimeFiles": []
+    },
+    "samplecommon-debug-arm64-v8a": {
+      "artifactName": "samplecommon",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libsamplecommon.a",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libsamplecommon.a",
+      "runtimeFiles": []
+    },
+    "android_native_app_glue-debug-arm64-v8a": {
+      "artifactName": "android_native_app_glue",
+      "buildCommand": "C:\\Users\\MohamedSoliman\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\jni\\Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-24 NDK_OUT\u003dC:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\lib V\u003d0 -j12 -CC:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android APP_PLATFORM\u003dandroid-24 NDK_TOOLCHAIN_VERSION\u003dclang APP_STL\u003dc++_static NDK_DEBUG\u003d1 OVR_DEBUG\u003d1 USE_ASAN\u003d1 C:/ovr_sdk_mobile_1.50.0/VrSamples/VrCubeWorld_Framework/Projects/Android/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libandroid_native_app_glue.a",
+      "abi": "arm64-v8a",
+      "output": "C:\\ovr_sdk_mobile_1.50.0\\VrSamples\\VrCubeWorld_Framework\\Projects\\Android\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\arm64-v8a\\libandroid_native_app_glue.a",
+      "runtimeFiles": []
+    }
+  }
+}

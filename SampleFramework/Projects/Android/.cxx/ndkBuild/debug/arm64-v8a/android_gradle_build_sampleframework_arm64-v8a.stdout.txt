@@ -1,0 +1,24 @@
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile        : sampleframework <= Framebuffer.c
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile++      : sampleframework <= Android.cpp
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile++      : sampleframework <= HandModel.cpp
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile++      : sampleframework <= Appl.cpp
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile++      : sampleframework <= HandMaskRenderer.cpp
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile++      : sampleframework <= HandRenderer.cpp
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] Compile++      : sampleframework <= SurfaceRenderApp.cpp
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+make: Entering directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
+[arm64-v8a] StaticLibrary  : libsampleframework.a
+make: Leaving directory 'C:/ovr_sdk_mobile_1.50.0/SampleFramework/Projects/Android'
