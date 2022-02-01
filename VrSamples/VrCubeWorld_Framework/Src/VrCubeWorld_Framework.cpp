@@ -17,6 +17,8 @@ Copyright	:	Copyright (c) Facebook Technologies, LLC and its affiliates. All rig
 #include <memory>
 #include <vector>
 #include <string>
+#include <queue>
+
 
 /*
 ================================================================================
@@ -103,6 +105,11 @@ static const unsigned short cubeIndices[36] = {
     0, 1, 7, 7, 4, 0 // back
 };
 
+struct PredictionQueueData {
+    int64_t XRTimeStamp;
+    OVRFW::FrameMatrices frameMatrices;
+};
+
 class VrCubeWorld : public ovrAppl {
    public:
     VrCubeWorld();
@@ -123,8 +130,7 @@ class VrCubeWorld : public ovrAppl {
     virtual void AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out)
         override;
     // Called once per eye each frame for default renderer
-    virtual void
-    AppRenderEye(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out, int eye) override;
+    virtual void AppRenderEye(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out, int eye) override;
 
    private:
     ovrRenderState RenderState;
@@ -145,6 +151,9 @@ class VrCubeWorld : public ovrAppl {
     int CubeRotations[NUM_INSTANCES];
     ovrMatrix4f CenterEyeViewMatrix;
     double startTime;
+    PredictionQueueData headPoseData;
+    int64_t XRTimeStamp_ = 0;
+    std::queue<PredictionQueueData>headPosesQueue;
 
     float RandomFloat();
 };
@@ -409,12 +418,32 @@ OVRFW::ovrApplFrameOut VrCubeWorld::AppFrame(const OVRFW::ovrApplFrameIn& vrFram
 }
 
 void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out) {
+
+    static int frameCount = 0;
+
     switch (RenderState) {
         case RENDER_STATE_LOADING: {
             DefaultRenderFrame_Loading(in, out);
         } break;
         case RENDER_STATE_RUNNING: {
             {
+                OVR::Matrix4f biggerFOVProjMat = ovrMatrix4f_CreateProjectionFov(90.0f, 90.0f, 0.0f, 0.0f, 0.1f, 0.0f);
+                headPoseData.XRTimeStamp = XRTimeStamp_++;
+                headPoseData.frameMatrices.EyeView[0] = in.Eye[0].ViewMatrix;
+                headPoseData.frameMatrices.EyeProjection[0] = biggerFOVProjMat;//in.Eye[0].ProjectionMatrix;
+                headPoseData.frameMatrices.EyeView[1] = in.Eye[1].ViewMatrix;
+                headPoseData.frameMatrices.EyeProjection[1] = biggerFOVProjMat;//in.Eye[1].ProjectionMatrix;
+                headPoseData.frameMatrices.CenterView = OVR::Matrix4f(in.HeadPose);
+                headPosesQueue.push(headPoseData);
+
+                PredictionQueueData oldHeadPose = headPosesQueue.front();
+                out.FrameMatrices.CenterView = oldHeadPose.frameMatrices.CenterView;
+                out.FrameMatrices.EyeView[0] = oldHeadPose.frameMatrices.EyeView[0];
+                out.FrameMatrices.EyeView[1] = oldHeadPose.frameMatrices.EyeView[1];
+                out.FrameMatrices.EyeProjection[0] = oldHeadPose.frameMatrices.EyeProjection[0];
+                out.FrameMatrices.EyeProjection[1] = oldHeadPose.frameMatrices.EyeProjection[1];
+
+                /*
                 /// Frame matrices
                 out.FrameMatrices.CenterView = CenterEyeViewMatrix;
                 for (int eye = 0; eye < VRAPI_FRAME_LAYER_EYE_MAX; eye++) {
@@ -423,7 +452,7 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
                     out.FrameMatrices.EyeProjection[eye] = ovrMatrix4f_CreateProjectionFov(
                         SuggestedEyeFovDegreesX, SuggestedEyeFovDegreesY, 0.0f, 0.0f, 0.1f, 0.0f);
                 }
-
+                 */
                 /// Surface
                 out.Surfaces.push_back(ovrDrawSurface(&SurfaceDef));
 
@@ -433,7 +462,14 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
                 ///	worldLayer.Header.Flags |=
                 /// VRAPI_FRAME_LAYER_FLAG_CHROMATIC_ABERRATION_CORRECTION;
             }
-            DefaultRenderFrame_Running(in, out);
+            if(frameCount > 10){
+                DefaultRenderFrame_Running(in, out);
+                headPosesQueue.pop();
+            }
+            else {
+                DefaultRenderFrame_Loading(in, out);
+            }
+            frameCount++;
         } break;
     }
 }

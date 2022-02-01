@@ -661,7 +661,7 @@ void ovrAppl::DefaultRenderFrame_Running(const ovrApplFrameIn& in, ovrRendererOu
     layerCount = 0;
     ovrLayerProjection2& layer = Layers[layerCount].Projection;
     layer = vrapi_DefaultLayerProjection2();
-    layer.HeadPose = Tracking.HeadPose;
+    //layer.HeadPose = Tracking.HeadPose;
     for (int eye = 0; eye < VRAPI_FRAME_LAYER_EYE_MAX; ++eye) {
         ovrFramebuffer* framebuffer = Framebuffer[NumFramebuffers == 1 ? 0 : eye].get();
         layer.Textures[eye].ColorSwapChain = framebuffer->ColorTextureSwapChain;
