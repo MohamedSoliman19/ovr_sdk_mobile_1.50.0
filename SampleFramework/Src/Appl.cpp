@@ -204,8 +204,7 @@ void ovrAppl::AppResumed(const ovrAppContext* /* context */) {}
 
 void ovrAppl::AppPaused(const ovrAppContext* /* context */) {}
 
-static void
-SubmitLoadingIcon(ovrMobile* sessionObject, const uint64_t frameIndex, const double displayTime) {
+static void SubmitLoadingIcon(ovrMobile* sessionObject, const uint64_t frameIndex, const double displayTime) {
     ovrLayer_Union2 layers[ovrMaxLayerCount] = {};
 
     // black layer
@@ -662,6 +661,8 @@ void ovrAppl::DefaultRenderFrame_Running(const ovrApplFrameIn& in, ovrRendererOu
     ovrLayerProjection2& layer = Layers[layerCount].Projection;
     layer = vrapi_DefaultLayerProjection2();
     //layer.HeadPose = Tracking.HeadPose;
+    OVR::Posef tmpPose = OVR::Posef(out.FrameMatrices.CenterView);
+    layer.HeadPose.Pose = tmpPose;
     for (int eye = 0; eye < VRAPI_FRAME_LAYER_EYE_MAX; ++eye) {
         ovrFramebuffer* framebuffer = Framebuffer[NumFramebuffers == 1 ? 0 : eye].get();
         layer.Textures[eye].ColorSwapChain = framebuffer->ColorTextureSwapChain;

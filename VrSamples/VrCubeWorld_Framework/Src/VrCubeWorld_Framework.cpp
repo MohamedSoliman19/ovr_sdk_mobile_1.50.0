@@ -19,6 +19,12 @@ Copyright	:	Copyright (c) Facebook Technologies, LLC and its affiliates. All rig
 #include <string>
 #include <queue>
 
+#include <android/log.h>
+#include <Model/SceneView.h>
+
+#define LOG_TAG "isar-client"
+#define LOGV(...) ((void)__android_log_print(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__))
+
 
 /*
 ================================================================================
@@ -138,7 +144,9 @@ class VrCubeWorld : public ovrAppl {
     OvrGuiSys::SoundEffectPlayer* SoundEffectPlayer;
     OvrGuiSys* GuiSys;
     ovrLocale* Locale;
+    OVRFW::OvrSceneView scene_;
     ovrSurfaceRender SurfaceRender;
+    std::unique_ptr<OVRFW::ModelFile> sceneModel_;
 
     ovrSurfaceDef SurfaceDef;
     unsigned int Random;
@@ -186,6 +194,7 @@ float VrCubeWorld::RandomFloat() {
 }
 
 bool VrCubeWorld::AppInit(const OVRFW::ovrAppContext* context) {
+
     const ovrJava& jj = *(reinterpret_cast<const ovrJava*>(context->ContextForVrApi()));
     const xrJava ctx = JavaContextConvert(jj);
     FileSys = OVRFW::ovrFileSys::Create(ctx);
@@ -443,6 +452,7 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
                 out.FrameMatrices.EyeProjection[0] = oldHeadPose.frameMatrices.EyeProjection[0];
                 out.FrameMatrices.EyeProjection[1] = oldHeadPose.frameMatrices.EyeProjection[1];
 
+
                 /*
                 /// Frame matrices
                 out.FrameMatrices.CenterView = CenterEyeViewMatrix;
@@ -462,7 +472,7 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
                 ///	worldLayer.Header.Flags |=
                 /// VRAPI_FRAME_LAYER_FLAG_CHROMATIC_ABERRATION_CORRECTION;
             }
-            if(frameCount > 10){
+            if(frameCount >= 5){
                 DefaultRenderFrame_Running(in, out);
                 headPosesQueue.pop();
             }
@@ -474,10 +484,9 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
     }
 }
 
-void VrCubeWorld::AppRenderEye(
-    const OVRFW::ovrApplFrameIn& in,
-    OVRFW::ovrRendererOutput& out,
-    int eye) {
+void VrCubeWorld::AppRenderEye(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out, int eye) {
+
+    LOGV("IsarClient: override AppRenderEye called");
     // Render the surfaces returned by Frame.
     SurfaceRender.RenderSurfaceList(
         out.Surfaces,
