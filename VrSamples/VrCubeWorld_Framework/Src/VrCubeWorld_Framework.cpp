@@ -472,11 +472,10 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
                 ///	worldLayer.Header.Flags |=
                 /// VRAPI_FRAME_LAYER_FLAG_CHROMATIC_ABERRATION_CORRECTION;
             }
-            if(frameCount >= 5){
+            if(frameCount >= 10){
                 DefaultRenderFrame_Running(in, out);
                 headPosesQueue.pop();
-            }
-            else {
+            } else {
                 DefaultRenderFrame_Loading(in, out);
             }
             frameCount++;
