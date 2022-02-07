@@ -21,6 +21,7 @@ Copyright	:	Copyright (c) Facebook Technologies, LLC and its affiliates. All rig
 
 #include <android/log.h>
 #include <Model/SceneView.h>
+#include <chrono>
 
 #define LOG_TAG "isar-client"
 #define LOGV(...) ((void)__android_log_print(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__))
@@ -114,6 +115,7 @@ static const unsigned short cubeIndices[36] = {
 struct PredictionQueueData {
     int64_t XRTimeStamp;
     OVRFW::FrameMatrices frameMatrices;
+    std::chrono::high_resolution_clock::time_point pushedTime;
 };
 
 class VrCubeWorld : public ovrAppl {
@@ -443,6 +445,7 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
                 headPoseData.frameMatrices.EyeView[1] = in.Eye[1].ViewMatrix;
                 headPoseData.frameMatrices.EyeProjection[1] = biggerFOVProjMat;//in.Eye[1].ProjectionMatrix;
                 headPoseData.frameMatrices.CenterView = OVR::Matrix4f(in.HeadPose);
+                headPoseData.pushedTime = std::chrono::high_resolution_clock::now();
                 headPosesQueue.push(headPoseData);
 
                 PredictionQueueData oldHeadPose = headPosesQueue.front();
@@ -474,6 +477,9 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
             }
             if(frameCount >= 10){
                 DefaultRenderFrame_Running(in, out);
+                auto t_start = headPosesQueue.front().pushedTime;
+                auto t_end = std::chrono::high_resolution_clock::now();
+                LOGV("VrCubeWorld: delay between rendering and presenting = %f ms", std::chrono::duration<double, std::milli>(t_end-t_start).count());
                 headPosesQueue.pop();
             } else {
                 DefaultRenderFrame_Loading(in, out);
@@ -485,7 +491,7 @@ void VrCubeWorld::AppRenderFrame(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRend
 
 void VrCubeWorld::AppRenderEye(const OVRFW::ovrApplFrameIn& in, OVRFW::ovrRendererOutput& out, int eye) {
 
-    LOGV("IsarClient: override AppRenderEye called");
+    //LOGV("VrCubeWorld: override AppRenderEye called");
     // Render the surfaces returned by Frame.
     SurfaceRender.RenderSurfaceList(
         out.Surfaces,
